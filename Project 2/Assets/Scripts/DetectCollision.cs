@@ -1,16 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveForward : MonoBehaviour
+public class DetectCollision : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
-    public float speed = 40.0f;
+
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+        Destroy(other.gameObject);
     }
 }
